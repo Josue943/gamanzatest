@@ -1,13 +1,13 @@
 import React from "react";
 
-const Death = () => {
+const Death = ({ death }) => {
+  const { death: d, cause, responsible, last_words } = death;
   return (
     <div className="death-card">
-      <h4>Death</h4>
-      <span></span>
-      <span></span>
-      <span></span>
-      <p></p>
+      <h4>{d}</h4>
+      <span>{cause}</span>
+      <span>{responsible}</span>
+      <p>{last_words}</p>
     </div>
   );
 };

@@ -11,8 +11,9 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  width: 90%;
+  max-width: 1400px;
+  width: 95%;
+  height: 100vh;
   margin: auto;
 }
 
@@ -22,8 +23,8 @@ body {
 }
 
 .nav {
-  max-width: 1200px;
-  width: 90%;
+  max-width: 1400px;
+  width: 95%;
   margin: auto;
   display: flex;
 }
@@ -36,6 +37,14 @@ body {
 }
 
 /*home*/
+.main-content {
+  display: flex;
+}
+
+.characters-container {
+  display: flex;
+  flex-direction: column;
+}
 
 .sort {
   margin: 30px 0;
@@ -57,12 +66,13 @@ h3 {
 
 /* card*/
 .card-container {
-  width: 600px;
+  width: 800px;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-template-rows: 1fr;
   height: 100%;
+  padding-right: 20px;
 }
 
 .card-character {
@@ -93,3 +103,29 @@ h3 {
 .card-footer span {
   padding: 3px 0;
 }
+
+/**/
+.deaths {
+  border-left: 1px solid black;
+  padding: 20px;
+  display: grid;
+}
+
+.death-card {
+  height: 140px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.death-card h4 {
+  font-weight: 700;
+  padding: 8px 0;
+}
+
+.death-card p {
+  padding: 13px 0;
+}
+
+/**/
