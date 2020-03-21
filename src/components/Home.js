@@ -17,8 +17,6 @@ const Home = () => {
   useEffect(() => {
     if (sortBy === "") return;
     console.log(sortBy);
-    setData(data.sort((a, b) => b.sortBy - a.sortBy));
-    console.log(data.sort((a, b) => a.sortBy - b.sortBy));
   }, [sortBy]);
 
   return (
