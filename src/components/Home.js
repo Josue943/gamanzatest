@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useHome from "../hooks/useHome";
 import Character from "./Character";
 import Death from "./Death";
 
 const Home = () => {
+  const [sortBy, setSortBy] = useState("");
   const { characters, deaths, count } = useHome();
+  const [data, setData] = useState([]);
+  const [load, setLoad] = useState(false);
+  const options = ["name", "birthday", "portrayer"];
+
+  useEffect(() => {
+    if (characters.length) setData(characters);
+  }, [characters]);
+
+  useEffect(() => {
+    if (sortBy === "") return;
+    console.log(sortBy);
+    setData(data.sort((a, b) => b.sortBy - a.sortBy));
+    console.log(data.sort((a, b) => a.sortBy - b.sortBy));
+  }, [sortBy]);
 
   return (
     <>
@@ -13,16 +28,19 @@ const Home = () => {
           <div className="sort">
             <h3>SORT BY</h3>
             <ul>
-              <li>Name</li>
-              <li>Birthday</li>
-              <li>Portrayer</li>
+              {options.map(o => (
+                <li key={o} value={o} onClick={() => setSortBy(o)}>
+                  {o}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="card-container">
-            {characters.map(character => (
+            {data.map(character => (
               <Character character={character} key={character.char_id} />
             ))}
           </div>
+          <button className="load">Load More</button>
         </div>
 
         <div className="deaths">

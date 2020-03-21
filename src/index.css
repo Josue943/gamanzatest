@@ -15,6 +15,7 @@ body {
   width: 95%;
   height: 100vh;
   margin: auto;
+  padding-top: 30px;
 }
 
 /* navbar*/
@@ -62,8 +63,15 @@ h3 {
 .sort ul li {
   border: 1px solid gray;
   padding: 8px 15px;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
+.load {
+  width: 100px;
+  margin: 30px auto;
+  padding: 10px;
+}
 /* card*/
 .card-container {
   width: 800px;
@@ -128,4 +136,20 @@ h3 {
   padding: 13px 0;
 }
 
-/**/
+/*Episode*/
+.episode-container {
+  width: 1100px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  grid-template-rows: 1fr;
+  grid-gap: 20px 30px;
+}
+
+.episode-card {
+  height: 150px;
+  padding: 15px;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+}

@@ -23,7 +23,6 @@ const useHome = () => {
       const api = await fetch(urlDeaths);
       const res = await api.json();
       setDeaths(res.slice(0, 3));
-      console.log(res);
       const c = await fetch(urlCounts);
       const resc = await c.json();
       setCount(resc[0].deathCount);
